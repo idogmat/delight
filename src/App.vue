@@ -14,8 +14,11 @@
       <pre>{{ routIndex }}</pre>
     </div>
     <router-view :folder="arrayFile"/>
-    <a href="static/prosto.pdf">2222222</a>
-
+<!--    <a href="static/prosto.pdf">2222222</a>-->
+<div :class="this.$route.params['id']==='file6' ? 'show': 'disable'">
+  <iframe src="static/prosto.pdf"
+          style="width: 600px; height: 600px;" frameborder="0">Ваш браузер не поддерживает фреймы</iframe>
+</div>
 
     <!--    <pre>{{ main[0] }}</pre>-->
     <!--    <pre>{{ main[0].under_folder[0].files[0].store_name }}</pre>-->
@@ -145,5 +148,11 @@ body {
 .main-active {
   background: gray;
   color: white;
+}
+.show{
+display: flex;
+}
+.disable{
+display: none;
 }
 </style>
